@@ -1,0 +1,33 @@
+# ===== СТЕЙДЖ 1: СБОРКА (builder) =====
+FROM python:3.12-slim AS builder
+
+WORKDIR /app
+
+# Копируем только файл с зависимостями для кэширования слоёв
+COPY requirements.txt .
+
+# Устанавливаем зависимости в локальную директорию пользователя
+RUN pip install --user --no-cache-dir -r requirements.txt
+
+# Копируем весь исходный код приложения (обязательная конструкция COPY . .)
+COPY . .
+
+# ===== СТЕЙДЖ 2: ФИНАЛЬНЫЙ ОБРАЗ =====
+FROM python:3.12-slim
+
+WORKDIR /app
+
+# Копируем установленные пакеты из builder
+COPY --from=builder /root/.local /root/.local
+
+# Копируем код приложения из builder
+COPY --from=builder /app /app
+
+# Добавляем локальные bin-файлы (uvicorn и др.) в PATH
+ENV PATH=/root/.local/bin:$PATH
+
+# Открываем порт (опционально, для документации)
+EXPOSE 5000
+
+# Запускаем приложение через uvicorn
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "5000"]
