@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Docker
+.dockerignore
+.env          # критично! не пушить секреты
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Project-specific
+db_data/      # если смонтированы тома
+*.sql
+
