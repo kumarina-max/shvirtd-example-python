@@ -9,13 +9,14 @@ services:
       backend:
         ipv4_address: 172.20.0.5
     environment:
-      MYSQL_HOST: db
-      MYSQL_PORT: 3306
-      MYSQL_USER: ${MYSQL_USER}
-      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
-      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      DB_HOST: db
+      DB_PORT: 3306
+      DB_USER: ${MYSQL_USER}
+      DB_PASSWORD: ${MYSQL_PASSWORD}
+      DB_NAME: ${MYSQL_DATABASE}
     env_file:
-      - .env   
+      - .env
+
   db:
     image: mysql:8
     restart: always
@@ -32,3 +33,4 @@ services:
 
 volumes:
   db_data:
+
