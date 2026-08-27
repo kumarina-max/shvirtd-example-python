@@ -64,3 +64,12 @@ docker run --rm \
 
 ![/opt/backup](screenshot/task5.2.png)
 
+
+### Задание 6
+
+![dive и docker save](screenshot/task6.png)
+
+![dive и docker save](screenshot/task6.1.png)
+
+![dive и docker save](screenshot/task6.2.png)
+
