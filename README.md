@@ -59,3 +59,8 @@ docker run --rm \
 #### cron-task 
 
 ![cron-task](screenshot/task%205.png)
+
+#### Скриншот с несколькими резервными копиями в "/opt/backup"
+
+![/opt/backup](screenshot/task5.2.png)
+
