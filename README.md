@@ -15,3 +15,13 @@
 #### Скриншот  sql-запроса.
 
 ![SQL-запрос](screenshot/task3.png)
+
+### Задание 4
+
+#### Скриншот  sql-запроса.
+
+![SQL-запрос](screenshot/task4.png)
+
+#### Проверка вашего сервиса на сайте https://check-host.net/check-http
+
+![Проверка сервиса](screenshot/task4.1.png)
