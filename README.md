@@ -56,3 +56,6 @@ docker run --rm \
   schnitzler/mysqldump \
   mysqldump --protocol=tcp --no-tablespaces -h db -uroot ${MYSQL_DATABASE} > ${BACKUP_DIR}/dump_${MYSQL_DATABASE}_${DATE}.sql
 ```
+#### cron-task 
+
+![cron-task](screenshot/task%205.png)
